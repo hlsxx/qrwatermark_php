@@ -1,0 +1,16 @@
+{
+    "name": "holes/qrwatermark",
+    "description": "QR codes generator",
+    "autoload": {
+        "psr-4": {
+            "Holes\\Qrwatermark\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Holes70",
+            "email": "holespato@gmail.com"
+        }
+    ],
+    "require": {}
+}
