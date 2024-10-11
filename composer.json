@@ -1,16 +1,19 @@
 {
-    "name": "holes/qrwatermark",
-    "description": "QR codes generator",
+    "name": "hlsxx/qrwatermark",
+    "description": "A library to generate QR codes with watermarks.",
+    "type": "library",
     "autoload": {
         "psr-4": {
-            "Holes\\Qrwatermark\\": "src/"
+            "Hlsxx\\QrWatermark\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "Holes70",
+            "name": "Patrik Holes",
             "email": "holespato@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": "^8.0"
+    }
 }
