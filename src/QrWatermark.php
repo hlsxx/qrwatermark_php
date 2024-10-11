@@ -24,16 +24,19 @@ class QrWatermark {
     $this->_logoConfig = (new LogoConfigBuilder())->build();
   }
 
-  public function logo(string $logoPath) {
+  public function logo(string $logoPath): QrWatermark {
     $this->_logoPath = $logoPath;
+    return $this;
   }
 
-  public function imageConfig(ImageConfig $imageConfig) {
+  public function imageConfig(ImageConfig $imageConfig): QrWatermark {
     $this->_imageConfig = $imageConfig;
+    return $this;
   }
 
-  public function logoConfig(LogoConfig $logoConfig) {
+  public function logoConfig(LogoConfig $logoConfig): QrWatermark {
     $this->_logoConfig = $logoConfig;
+    return $this;
   }
 
   public function saveAsImage(string $path): bool {
