@@ -46,6 +46,7 @@ class QrWatermark {
         $this->_logoPath,
         $path,
         $this->_imageConfig->color,
+        $this->_imageConfig->colorsGradient,
         $this->_imageConfig->backgroundColor,
         $this->_imageConfig->isGradientEnabled,
         $this->_logoConfig->width,

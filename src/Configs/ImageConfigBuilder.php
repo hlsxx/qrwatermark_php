@@ -7,6 +7,7 @@ class ImageConfigBuilder {
   private int $_pixelSize = 10;
   private int $_marginSize = 1;
   private array $_color = [0, 0, 0];
+  private ?array $_colorsGradient = null;
   private array $_backgroundColor = [255, 255, 255];
   private bool $_isGradientEnabled = false;
 
@@ -25,6 +26,11 @@ class ImageConfigBuilder {
     return $this;
   }
 
+  public function colorGradient(array $rgbs): ImageConfigBuilder {
+    $this->_colorsGradient = $rgbs;
+    return $this;
+  }
+
   public function backgroundColor(array $rgb): ImageConfigBuilder {
     $this->_backgroundColor = $rgb;
     return $this;
@@ -40,6 +46,7 @@ class ImageConfigBuilder {
       $this->_pixelSize,
       $this->_marginSize,
       $this->_color,
+      $this->_colorsGradient,
       $this->_backgroundColor,
       $this->_isGradientEnabled
     );

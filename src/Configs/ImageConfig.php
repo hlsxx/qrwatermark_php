@@ -7,6 +7,7 @@ class ImageConfig {
   public int $pixelSize;
   public int $marginSize;
   public array $color;
+  public ?array $colorsGradient;
   public array $backgroundColor;
   public bool $isGradientEnabled;
 
@@ -14,12 +15,14 @@ class ImageConfig {
     int $pixelSize,
     int $marginSize,
     array $color,
+    ?array $colorsGradient,
     array $backgroundColor,
     bool $isGradientEnabled
   ) {
     $this->pixelSize = $pixelSize;
     $this->marginSize = $marginSize;
     $this->color = $color;
+    $this->colorsGradient = $colorsGradient;
     $this->backgroundColor = $backgroundColor;
     $this->isGradientEnabled = $isGradientEnabled;
   }
