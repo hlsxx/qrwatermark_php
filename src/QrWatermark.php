@@ -67,22 +67,17 @@ class QrWatermark {
    * @return bool
   */
   public function saveAsImage(string $path): bool {
-    try {
-      return qrwatermark_generate(
-        $this->_text,
-        $this->_logoPath,
-        $path,
-        $this->_imageConfig->color,
-        $this->_imageConfig->colorsGradient,
-        $this->_imageConfig->backgroundColor,
-        $this->_imageConfig->isAutoGradientEnabled,
-        $this->_logoConfig->width,
-        $this->_logoConfig->height
-      );
-    } catch (\Exception $e) {
-      echo $e->getMessage();
-      return false;
-    }
+    return qrwatermark_generate(
+      $this->_text,
+      $this->_logoPath,
+      $path,
+      $this->_imageConfig->color,
+      $this->_imageConfig->colorsGradient,
+      $this->_imageConfig->backgroundColor,
+      $this->_imageConfig->isAutoGradientEnabled,
+      $this->_logoConfig->width,
+      $this->_logoConfig->height
+    );
   }
 
 }

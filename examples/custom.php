@@ -24,6 +24,11 @@ $qrw = (new QrWatermark("Hello from PHP custom"))
   ->logoConfig($logoConfig)
   ->imageConfig($imageConfig);
 
-$qrw->saveAsImage("imgs/custom.png");
+// Error handling
+try {
+  $qrw->saveAsImage("imgs/custom.png");
+} catch (\Exception $e) {
+  var_dump($e->getMessage());
+}
 
 ?>
