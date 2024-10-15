@@ -9,7 +9,7 @@ class ImageConfig {
   public array $color;
   public ?array $colorsGradient;
   public array $backgroundColor;
-  public bool $isGradientEnabled;
+  public bool $isAutoGradientEnabled;
 
   public function __construct(
     int $pixelSize,
@@ -17,14 +17,14 @@ class ImageConfig {
     array $color,
     ?array $colorsGradient,
     array $backgroundColor,
-    bool $isGradientEnabled
+    bool $isAutoGradientEnabled
   ) {
     $this->pixelSize = $pixelSize;
     $this->marginSize = $marginSize;
     $this->color = $color;
     $this->colorsGradient = $colorsGradient;
     $this->backgroundColor = $backgroundColor;
-    $this->isGradientEnabled = $isGradientEnabled;
+    $this->isAutoGradientEnabled = $isAutoGradientEnabled;
   }
 
 }
