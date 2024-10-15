@@ -8,8 +8,9 @@ use Hlsxx\QrWatermark\Configs\LogoConfigBuilder;
 
 // Custom image config
 $imageConfig = (new ImageConfigBuilder())
+  // ->colorGradient([255, 255, 255], [0, 0, 0]) // Custom gradient
   ->color([72, 76, 137])
-  ->isGradientEnabled()
+  ->isAutoGradientEnabled()
   ->build();
 
 // Custom logo config
