@@ -69,8 +69,8 @@ class QrWatermark {
   public function saveAsImage(string $path): bool {
     return qrwatermark_generate(
       $this->_text,
-      $this->_logoPath,
       $path,
+      $this->_logoPath,
       $this->_imageConfig->color,
       $this->_imageConfig->colorsGradient,
       $this->_imageConfig->backgroundColor,
