@@ -1,7 +1,7 @@
 {
     "name": "hlsxx/qrwatermark",
     "description": "A library to generate QR codes with watermarks.",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "type": "library",
     "autoload": {
         "psr-4": {
@@ -10,7 +10,7 @@
     },
     "authors": [
         {
-            "name": "Patrik Holes",
+            "name": "hlsxx",
             "email": "holespato@gmail.com"
         }
     ],
