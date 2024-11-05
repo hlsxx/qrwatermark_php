@@ -18,7 +18,7 @@ class QrWatermark {
    * @param string $text QR code text
    */
   public function __construct(
-    string $text,
+    string $text
   ) {
     $this->_text = $text;
 

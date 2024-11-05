@@ -9,7 +9,7 @@ class LogoConfig {
 
   public function __construct(
     int $width,
-    int $height,
+    int $height
   ) {
     $this->width = $width;
     $this->height = $height;
