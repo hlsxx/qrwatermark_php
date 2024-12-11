@@ -76,7 +76,8 @@ class QrWatermark {
       $this->_imageConfig->backgroundColor,
       $this->_imageConfig->isAutoGradientEnabled,
       $this->_logoConfig->width,
-      $this->_logoConfig->height
+      $this->_logoConfig->height,
+      $this->_imageConfig->pixelSize,
     );
   }
 
