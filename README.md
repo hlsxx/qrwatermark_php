@@ -8,7 +8,10 @@ A library to generate QR codes with watermarks.
 
 You can download the latest version of the PHP extension here:
 
-- [libqrwatermark.so](https://github.com/hlsxx/qrwatermark_php_extension/releases/tag/v1.0.1) - Version 1.0.1
+- [libqrwatermark.so](https://github.com/hlsxx/qrwatermark_php_extension/releases/download/v0.1.2/libqrwatermark.so) - Version 0.1.2
+
+Or check the repository:
+- [qrwatermark_php_extension](https://github.com/hlsxx/qrwatermark_php_extension)
 
 ## Installation
 
