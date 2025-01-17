@@ -14,7 +14,7 @@ $imageConfig = new ImageConfigBuilder()
 // Custom logo config
 $logoConfig =  new LogoConfigBuilder()->width(70)->height(70);
 
-$qrw = (new QrWatermark("Hello from PHP custom"))
+$qrw = new QrWatermark("Hello from PHP custom")
   ->logo("imgs/php_logo.png")
   ->logoConfig($logoConfig)
   ->imageConfig($imageConfig);
