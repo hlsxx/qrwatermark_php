@@ -7,9 +7,8 @@ use Hlsxx\QrWatermark\Configs\ImageConfigBuilder;
 use Hlsxx\QrWatermark\Configs\LogoConfig;
 use Hlsxx\QrWatermark\Configs\LogoConfigBuilder;
 
-class QrWatermark {
-
-  private string $_text;
+class QrWatermark
+{
   private ?string $_logoPath = null;
   private ImageConfig $_imageConfig;
   private LogoConfig $_logoConfig;
@@ -18,13 +17,11 @@ class QrWatermark {
    * @param string $text QR code text
    */
   public function __construct(
-    string $text
+    private string $text
   ) {
-    $this->_text = $text;
-
     // Defaults
-    $this->_imageConfig = (new ImageConfigBuilder())->build();
-    $this->_logoConfig = (new LogoConfigBuilder())->build();
+    $this->_imageConfig = new ImageConfigBuilder()->build();
+    $this->_logoConfig = new LogoConfigBuilder()->build();
   }
 
   /*
@@ -33,7 +30,8 @@ class QrWatermark {
    * @param string $logoPath
    * @return QrWatermark
   */
-  public function logo(string $logoPath): QrWatermark {
+  public function logo(string $logoPath): QrWatermark
+  {
     $this->_logoPath = $logoPath;
     return $this;
   }
@@ -44,8 +42,13 @@ class QrWatermark {
    * @param ImageConfig $imageConfig
    * @return QrWatermark
   */
-  public function imageConfig(ImageConfig $imageConfig): QrWatermark {
-    $this->_imageConfig = $imageConfig;
+  public function imageConfig(ImageConfigBuilder|ImageConfig $imageConfig): QrWatermark
+  {
+    $worker = $imageConfig;
+    if ($imageConfig instanceof ImageConfigBuilder) {
+      $worker = $imageConfig->build();
+    }
+    $this->_imageConfig = $worker;
     return $this;
   }
 
@@ -55,8 +58,13 @@ class QrWatermark {
    * @param LogoConfig $logoConfig
    * @return QrWatermark
   */
-  public function logoConfig(LogoConfig $logoConfig): QrWatermark {
-    $this->_logoConfig = $logoConfig;
+  public function logoConfig(LogoConfigBuilder|LogoConfig $logoConfig): QrWatermark
+  {
+    $worker = $logoConfig;
+    if ($logoConfig instanceof LogoConfigBuilder) {
+      $worker = $logoConfig->build();
+    }
+    $this->_logoConfig = $worker;
     return $this;
   }
 
@@ -66,9 +74,10 @@ class QrWatermark {
    * @param string $path Path to the file e.g.:(/var/www/image.png)
    * @return bool
   */
-  public function saveAsImage(string $path): bool {
+  public function saveAsImage(string $path): bool
+  {
     return qrwatermark_generate(
-      $this->_text,
+      $this->text,
       $path,
       $this->_logoPath,
       $this->_imageConfig->color,
@@ -80,7 +89,4 @@ class QrWatermark {
       $this->_imageConfig->pixelSize,
     );
   }
-
 }
-
-?>

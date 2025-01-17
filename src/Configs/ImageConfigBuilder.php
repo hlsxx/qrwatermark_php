@@ -2,7 +2,8 @@
 
 namespace Hlsxx\QrWatermark\Configs;
 
-class ImageConfigBuilder {
+class ImageConfigBuilder
+{
 
   private int $_pixelSize = 10;
   private int $_marginSize = 1;
@@ -17,7 +18,8 @@ class ImageConfigBuilder {
    * @param int $size
    * @return ImageConfigBuilder
   */
-  public function pixelSize(int $size): ImageConfigBuilder {
+  public function pixelSize(int $size): ImageConfigBuilder
+  {
     $this->_pixelSize = $size;
     return $this;
   }
@@ -28,7 +30,8 @@ class ImageConfigBuilder {
    * @param int $size
    * @return ImageConfigBuilder
   */
-  public function marginSize(int $size): ImageConfigBuilder {
+  public function marginSize(int $size): ImageConfigBuilder
+  {
     $this->_marginSize = $size;
     return $this;
   }
@@ -39,7 +42,8 @@ class ImageConfigBuilder {
    * @param array $rgb Pixel color e.g. black ([255, 255, 255])
    * @return ImageConfigBuilder
   */
-  public function color(array $rgb): ImageConfigBuilder {
+  public function color(array $rgb): ImageConfigBuilder
+  {
     $this->_color = $rgb;
     return $this;
   }
@@ -54,7 +58,8 @@ class ImageConfigBuilder {
    *
    * @return ImageConfigBuilder
   */
-  public function colorGradient(array $startColorRgb, array $endColorRgb): ImageConfigBuilder {
+  public function colorGradient(array $startColorRgb, array $endColorRgb): ImageConfigBuilder
+  {
     $this->_colorsGradient = [$startColorRgb, $endColorRgb];
     return $this;
   }
@@ -65,7 +70,8 @@ class ImageConfigBuilder {
    * @param array $rgb Rgb color e.g., Black color ([0, 0, 0])
    * @return ImageConfigBuilder
   */
-  public function backgroundColor(array $rgb): ImageConfigBuilder {
+  public function backgroundColor(array $rgb): ImageConfigBuilder
+  {
     $this->_backgroundColor = $rgb;
     return $this;
   }
@@ -76,7 +82,8 @@ class ImageConfigBuilder {
    *
    * @return ImageConfigBuilder
   */
-  public function isAutoGradientEnabled(): ImageConfigBuilder {
+  public function isAutoGradientEnabled(): ImageConfigBuilder
+  {
     $this->_isAutoGradientEnabled = true;
     return $this;
   }
@@ -86,7 +93,8 @@ class ImageConfigBuilder {
    *
    * @return ImageConfig
   */
-  public function build() {
+  public function build()
+  {
     return new ImageConfig(
       $this->_pixelSize,
       $this->_marginSize,
@@ -96,7 +104,4 @@ class ImageConfigBuilder {
       $this->_isAutoGradientEnabled
     );
   }
-
 }
-
-?>
