@@ -1,7 +1,7 @@
 {
     "name": "hlsxx/qrwatermark",
     "description": "A library to generate QR codes with watermarks.",
-    "version": "1.1.2",
+    "version": "1.2.0",
     "type": "library",
     "autoload": {
         "psr-4": {
@@ -15,6 +15,6 @@
         }
     ],
     "require": {
-        "php": "^8.0"
+        "php": "^8.4"
     }
 }
