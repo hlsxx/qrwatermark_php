@@ -7,17 +7,12 @@ use Hlsxx\QrWatermark\Configs\ImageConfigBuilder;
 use Hlsxx\QrWatermark\Configs\LogoConfigBuilder;
 
 // Custom image config
-$imageConfig = (new ImageConfigBuilder())
+$imageConfig = new ImageConfigBuilder()
   // ->colorGradient([255, 255, 255], [0, 0, 0]) // Custom gradient
-  ->color([72, 76, 137])
-  ->isAutoGradientEnabled()
-  ->build();
+  ->color([72, 76, 137])->isAutoGradientEnabled();
 
 // Custom logo config
-$logoConfig =  (new LogoConfigBuilder())
-  ->width(70)
-  ->height(70)
-  ->build();
+$logoConfig =  new LogoConfigBuilder()->width(70)->height(70);
 
 $qrw = (new QrWatermark("Hello from PHP custom"))
   ->logo("imgs/php_logo.png")
@@ -30,5 +25,3 @@ try {
 } catch (\Exception $e) {
   var_dump($e->getMessage());
 }
-
-?>
